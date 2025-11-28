@@ -17,6 +17,12 @@ export default function BillsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
 
+  const getAuthHeaders = () => {
+    if (typeof window === 'undefined') return {};
+    const token = localStorage.getItem('token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  };
+
   useEffect(() => {
     fetchBills();
   }, [statusFilter, searchTerm]);
@@ -27,7 +33,14 @@ export default function BillsPage() {
       if (statusFilter !== 'all') params.append('status', statusFilter);
       if (searchTerm) params.append('search', searchTerm);
       
-      const response = await fetch(`/api/bills?${params}`);
+      const authHeaders = getAuthHeaders();
+      if (!authHeaders.Authorization) {
+        setLoading(false);
+        alert('Please log in again to view bills.');
+        return;
+      }
+
+      const response = await fetch(`/api/bills?${params}`, { headers: authHeaders });
       const result = await response.json();
       if (result.success) {
         setBills(result.data);
@@ -43,8 +56,15 @@ export default function BillsPage() {
     if (!confirm('Are you sure you want to delete this bill? This action cannot be undone.')) return;
     
     try {
+      const authHeaders = getAuthHeaders();
+      if (!authHeaders.Authorization) {
+        alert('Please log in again to delete bills.');
+        return;
+      }
+
       const response = await fetch(`/api/bills/${id}`, {
         method: 'DELETE',
+        headers: authHeaders,
       });
       
       const result = await response.json();

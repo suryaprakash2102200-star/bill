@@ -13,6 +13,12 @@ export default function CreateBillPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   
+  const getAuthHeaders = () => {
+    if (typeof window === 'undefined') return {};
+    const token = localStorage.getItem('token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  };
+  
   const [formData, setFormData] = useState({
     customer: {
       name: '',
@@ -85,10 +91,19 @@ export default function CreateBillPage() {
         status,
       };
       
+      const authHeaders = getAuthHeaders();
+      
+      if (!authHeaders.Authorization) {
+        alert('Please log in again to create bills.');
+        router.push('/login');
+        return;
+      }
+
       const response = await fetch('/api/bills', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...authHeaders,
         },
         body: JSON.stringify(billData),
       });

@@ -20,13 +20,28 @@ export default function ClientsPage() {
     company: ''
   });
 
+  const getAuthHeaders = () => {
+    if (typeof window === 'undefined') return {};
+    const token = localStorage.getItem('token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  };
+
   useEffect(() => {
     fetchClients();
   }, []);
 
   const fetchClients = async () => {
     try {
-      const response = await fetch('/api/clients');
+      const authHeaders = getAuthHeaders();
+      if (!authHeaders.Authorization) {
+        setLoading(false);
+        alert('Please log in again to view clients.');
+        return;
+      }
+
+      const response = await fetch('/api/clients', {
+        headers: authHeaders,
+      });
       const result = await response.json();
       if (result.success) {
         setClients(result.data);
@@ -45,9 +60,18 @@ export default function ClientsPage() {
     }
 
     try {
+      const authHeaders = getAuthHeaders();
+      if (!authHeaders.Authorization) {
+        alert('Please log in again to add clients.');
+        return;
+      }
+
       const response = await fetch('/api/clients', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          ...authHeaders,
+        },
         body: JSON.stringify(newClient),
       });
       
