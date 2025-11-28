@@ -1,0 +1,33 @@
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+.paid {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.unpaid {
+  background-color: #fed7aa;
+  color: #92400e;
+}
+
+.overdue {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.draft {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.default {
+  background-color: var(--background);
+  color: var(--text-secondary);
+}

@@ -1,0 +1,296 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.invoiceContainer {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.invoice {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.invoiceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.companyInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.logoIcon {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.companyName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.companyAddress {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.invoiceTitle {
+  text-align: right;
+}
+
+.invoiceTitle h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.25rem;
+}
+
+.invoiceNumber {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+.infoSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.infoTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.customerName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.infoText {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.billDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.detailLabel {
+  color: var(--text-secondary);
+}
+
+.detailValue {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.itemsSection {
+  margin-bottom: 2rem;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.itemsTable thead {
+  background: var(--background);
+}
+
+.itemsTable th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.itemsTable td {
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.itemsTable td:last-child,
+.itemsTable th:last-child {
+  text-align: right;
+}
+
+.totalsSection {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.totalsRows {
+  min-width: 300px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.grandTotalRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  border-top: 2px solid var(--border);
+  margin-top: 0.5rem;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footerTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.notesSection,
+.paymentSection {
+  /* Styles already inherited */
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* Print Styles */
+@media print {
+  .pageHeader,
+  .actions {
+    display: none;
+  }
+  
+  .invoiceContainer {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  body {
+    background: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .invoiceContainer {
+    padding: 1.5rem;
+  }
+  
+  .invoiceHeader {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .invoiceTitle {
+    text-align: left;
+  }
+  
+  .infoSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    flex-wrap: wrap;
+  }
+}
