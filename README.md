@@ -1,251 +1,162 @@
-# BillGen - Professional Invoice & Bill Generator
+# Portfolio Website - Surya Prakash KR
 
-A modern, full-stack bill generation system built with Next.js, JavaScript, and MongoDB. Create, manage, and track invoices with a beautiful, responsive UI inspired by modern design principles.
+A stunning, modern portfolio website built with Next.js, featuring 3D animations, GSAP scroll effects, and a beautiful light theme with premium UI design.
 
 ## ✨ Features
 
-### 📊 Dashboard
-- Real-time analytics and statistics
-- Monthly revenue charts
-- Recent bills overview
-- Quick action buttons
+- **🎨 Modern Light Theme**: Beautiful gradient backgrounds with soft pastel colors
+- **🌐 3D Background**: Interactive Three.js sphere with distortion effects
+- **✨ GSAP Animations**: Professional scroll-triggered animations throughout
+- **💎 Premium UI Design**: 
+  - Glassmorphism effects with backdrop blur
+  - Gradient accents and shadows
+  - Smooth hover interactions
+  - Floating decorative elements
+- **📱 Fully Responsive**: Optimized for all devices
+- **🎭 Micro-interactions**: Framer Motion powered fluid animations
 
-### 📄 Bill Management
-- Create new bills with dynamic item entries
-- Automatic calculations (subtotal, tax, discount, grand total)
-- Edit and delete bills
-- Search and filter functionality
-- Status tracking (Paid, Unpaid, Overdue, Draft)
+## 🎨 Design System
 
-### 🖨️ Invoice Preview & Export
-- Professional invoice layout
-- Print functionality
-- PDF download (planned)
-- Share via native sharing API
+### Color Palette
+- **Primary**: `#6366f1` (Indigo)
+- **Secondary**: `#06b6d4` (Cyan)
+- **Accent**: `#ec4899` (Pink)
+- **Success**: `#10b981` (Green)
+- **Background**: Gradient from sky blue to purple to amber
+- **Text**: `#1a1a1a` (Dark) / `#64748b` (Muted)
 
-### 👥 Client Management
-- Store customer information
-- Track billing history
-- Quick customer selection
+### UI Components
+- **Glass Panels**: Frosted glass effect with blur and subtle borders
+- **Gradient Buttons**: Smooth color transitions with hover effects
+- **Icon Containers**: Gradient backgrounds with shadows
+- **Skill Pills**: Interactive tags with hover animations
+- **Timeline**: Gradient line with pulsing dots
+- **Cards**: Elevated design with shadow and border transitions
 
-### 🎨 Modern UI/UX
-- Clean, professional design
-- Responsive layout (mobile-friendly)
-- Smooth animations and transitions
-- Intuitive navigation
+## 🛠️ Tech Stack
 
-## 🚀 Getting Started
+- **Framework**: Next.js 16 (App Router)
+- **Animations**: 
+  - GSAP (GreenSock Animation Platform) with ScrollTrigger
+  - Framer Motion for micro-interactions
+  - Three.js with React Three Fiber for 3D graphics
+- **Styling**: Vanilla CSS with custom design system
+- **Icons**: Lucide React
+- **Fonts**: Inter (Google Fonts)
 
-### Prerequisites
+## 📦 Installation
 
-- Node.js 18+ installed
-- MongoDB (local or Atlas cloud)
+```bash
+# Install dependencies
+npm install
 
-### Installation
+# Run development server
+npm run dev
 
-1. **Clone or navigate to the project directory**
-   ```bash
-   cd d:\Billgenerator\billgen-app
-   ```
+# Build for production
+npm run build
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   ```env
-   MONGODB_URI=mongodb://localhost:27017/billgenerator
-   # Or use MongoDB Atlas:
-   # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/billgenerator
-   
-   NEXT_PUBLIC_COMPANY_NAME=Your Company Name
-   NEXT_PUBLIC_COMPANY_ADDRESS=Your Company Address
-   NEXT_PUBLIC_COMPANY_PHONE=+1 (555) 123-4567
-   NEXT_PUBLIC_COMPANY_EMAIL=info@yourcompany.com
-   ```
-
-4. **Start MongoDB** (if running locally)
-   ```bash
-   mongod
-   ```
-
-5. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-6. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 📁 Project Structure
-
-```
-billgen-app/
-├── app/
-│   ├── api/                    # API routes
-│   │   ├── bills/             # Bill CRUD endpoints
-│   │   ├── clients/           # Client endpoints
-│   │   └── dashboard/         # Dashboard stats
-│   ├── bills/                 # Bill pages
-│   │   ├── [id]/             # View/edit bill
-│   │   ├── new/              # Create new bill
-│   │   └── page.js           # Bills list
-│   ├── clients/              # Clients page
-│   ├── reports/              # Reports page
-│   ├── settings/             # Settings page
-│   ├── help/                 # Help page
-│   ├── layout.js             # Root layout
-│   ├── page.js               # Dashboard
-│   └── globals.css           # Global styles
-├── components/
-│   ├── Layout/               # Layout components
-│   │   ├── Layout.js
-│   │   ├── Sidebar.js
-│   │   └── Header.js
-│   ├── UI/                   # Reusable UI components
-│   │   ├── Button.js
-│   │   ├── Input.js
-│   │   └── StatusBadge.js
-│   └── Dashboard/            # Dashboard components
-│       ├── StatsCard.js
-│       └── RevenueChart.js
-├── lib/
-│   └── mongodb.js            # MongoDB connection
-├── models/
-│   ├── Bill.js               # Bill schema
-│   └── Client.js             # Client schema
-└── package.json
+# Start production server
+npm start
 ```
 
-## 🔧 Tech Stack
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: JavaScript
-- **Database**: MongoDB with Mongoose ODM
-- **Charts**: Chart.js + react-chartjs-2
-- **Icons**: React Icons (Feather Icons)
-- **Styling**: CSS Modules
-- **Print**: react-to-print
-- **Date Handling**: date-fns
+## 🎯 Sections
 
-## 📝 API Endpoints
+### 1. **Hero Section**
+- Animated character-by-character text reveal
+- 3D rotating sphere background
+- Floating decorative elements
+- Dual CTA buttons
+- Welcome badge with icon
 
-### Bills
-- `GET /api/bills` - Get all bills (with optional filters)
-- `POST /api/bills` - Create new bill
-- `GET /api/bills/:id` - Get single bill
-- `PUT /api/bills/:id` - Update bill
-- `DELETE /api/bills/:id` - Delete bill
+### 2. **Experience**
+- Vertical timeline with gradient line
+- Pulsing timeline dots
+- Glassmorphic cards with 3D scroll animations
+- Color-coded icons for company, location, and duration
+- Highlighted project details
 
-### Clients
-- `GET /api/clients` - Get all clients
-- `POST /api/clients` - Create new client
+### 3. **Projects**
+- Grid layout with 3D card animations
+- Decorative gradient overlays
+- Icon containers for project types
+- Interactive GitHub and live demo buttons
+- Technology tags with hover effects
 
-### Dashboard
-- `GET /api/dashboard/stats` - Get dashboard statistics
+### 4. **Skills & Expertise**
+- Technical stack with interactive skill pills
+- Core strengths with checkmark cards
+- Icon headers for each section
+- Key achievements showcase
+- Hover animations on all elements
 
-## 💡 Usage
+### 5. **Contact**
+- Icon containers for contact methods
+- Hover effects on contact cards
+- Gradient CTA button
+- Enhanced footer with tech stack credits
 
-### Creating a Bill
+### 6. **Navigation**
+- Fixed navbar with scroll effects
+- Pill-style navigation with active states
+- Glassmorphic background on scroll
+- Mobile-responsive hamburger menu
+- Logo with gradient icon
 
-1. Click "Create New Bill" button
-2. Fill in customer information
-3. Add line items with description, quantity, and rate
-4. Amounts are calculated automatically
-5. Add tax percentage and discount if needed
-6. Add notes or terms
-7. Click "Generate Bill" or "Save as Draft"
+## 🎭 Animations
 
-### Viewing/Printing Bills
+- **Hero**: 3D text rotation, elastic scaling, staggered reveals
+- **Experience**: Scroll-triggered card slides with 3D rotation
+- **Projects**: Scale and rotation effects, hover lift animations
+- **Skills**: Staggered fade-ins, hover transforms
+- **Contact**: Smooth entrance animations, hover lifts
+- **Global**: Floating elements, gradient movements, pulse effects
 
-1. Navigate to Bills page
-2. Click on a bill number to view
-3. Use Print, Download, or Share buttons
-4. Print directly from browser
+## 📝 Customization
 
-### Dashboard Analytics
+Edit `/src/data/resume.js` to update:
+- Personal information
+- Experience details
+- Projects (add as many as you want!)
+- Skills and technologies
+- Contact information
 
-- View total bills generated
-- Track monthly revenue
-- Monitor outstanding bills
-- See revenue trends over the last 6 months
+The design system is fully customizable through CSS variables in `globals.css`.
 
-## 🎨 Design Features
+## 🚀 Deployment
 
-- Color scheme based on professional blue tones
-- Glassmorphism effects on cards
-- Smooth hover states and transitions
-- Responsive grid layouts
-- Mobile-optimized sidebar
-- Print-friendly invoice layouts
+Deploy to Vercel (recommended):
 
-## 🔐 Environment Variables
+```bash
+npm run build
+```
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `MONGODB_URI` | MongoDB connection string | Yes |
-| `NEXT_PUBLIC_COMPANY_NAME` | Your company name | No |
-| `NEXT_PUBLIC_COMPANY_ADDRESS` | Your company address | No |
-| `NEXT_PUBLIC_COMPANY_PHONE` | Your phone number | No |
-| `NEXT_PUBLIC_COMPANY_EMAIL` | Your email address | No |
-
-## 🚧 Future Enhancements
-
-- [ ] Advanced PDF generation with custom templates
-- [ ] Email invoices directly to clients
-- [ ] Recurring bills/subscriptions
-- [ ] Payment gateway integration
-- [ ] Multi-currency support
-- [ ] User authentication and multi-user support
-- [ ] Role-based access control
-- [ ] Invoice templates customization
-- [ ] Advanced reporting and analytics
-- [ ] Export data (CSV, Excel)
+Or deploy to:
+- Netlify
+- Any Node.js hosting platform
 
 ## 📱 Responsive Design
 
-The application is fully responsive and works seamlessly on:
-- Desktop (1920px and above)
-- Laptop (1440px)
-- Tablet (768px)
-- Mobile (375px and below)
+- Mobile-first approach
+- Breakpoints at 768px (tablet) and 1024px (desktop)
+- Touch-friendly interactions
+- Optimized animations for mobile devices
 
-## 🐛 Troubleshooting
+## 🎨 UI Highlights
 
-### MongoDB Connection Issues
-- Ensure MongoDB is running
-- Check your connection string in `.env.local`
-- Verify network access if using MongoDB Atlas
-
-### Port Already in Use
-```bash
-# Kill process on port 3000
-npx kill-port 3000
-```
-
-### Dependencies Issues
-```bash
-# Clear node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
+- **Gradient Backgrounds**: Multi-color gradients throughout
+- **Shadow System**: Layered shadows (sm, md, lg, xl)
+- **Border Radius**: Consistent rounded corners (0.75rem - 1.5rem)
+- **Spacing**: Harmonious padding and margins
+- **Typography**: Inter font with optimized line heights
+- **Transitions**: Smooth 0.3s ease transitions
 
 ## 📄 License
 
-This project is open source and available for personal and commercial use.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📧 Support
-
-For support, email support@billgen.com or open an issue in the repository.
+© 2025 Surya Prakash KR. All rights reserved.
 
 ---
 
-Built with ❤️ using Next.js and MongoDB
+**Built with** ❤️ **using Next.js, GSAP, Three.js & Framer Motion**
